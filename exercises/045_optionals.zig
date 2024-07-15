@@ -22,6 +22,7 @@
 // Here, bar will either equal the u32 integer value stored in
 // foo, or it will equal 2 if foo was null.
 //
+
 const std = @import("std");
 
 pub fn main() void {
@@ -29,7 +30,7 @@ pub fn main() void {
 
     // Please threaten the result so that answer is either the
     // integer value from deepThought() OR the number 42:
-    const answer: u8 = result;
+    const answer: u8 = result orelse 42;
 
     std.debug.print("The Ultimate Answer: {}.\n", .{answer});
 }
